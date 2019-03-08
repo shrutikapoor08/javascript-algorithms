@@ -1,19 +1,35 @@
-//two operations - dequeue and enqueue
+//Implement a Queue in JS
 
-const MyCircularQueue = function(size) {
-    this.queue = new Array(size);
+class Queue {
+    constructor() {
+        this.items = []
+    };
+
+    enqueue(item){
+        return this.items.push(item);
+    }
+
+    dequeue() {
+        if(this.isEmpty()) throw "Cannot remove from empty queue";
+        return this.items.shift();
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    front(){
+        return this.items[0];
+    }
+
+    printQueue(){
+        this.items.forEach( i => console.log(i))
+    }
 
 }
 
-
-MyCircularQueue.prototype.Front = function() {
-    return this.queue[0] || -1;
-}
-
-MyCircularQueue.prototype.Rear = function() {
-    return this.queue[this.queue.length - 1] || -1;
-}
-
-MyCircularQueue.prototype.enQueue = function(value) {
-    
-}
+const q = new Queue();
+q.enqueue(2);
+q.enqueue(2);
+q.enqueue(2);
+q.printQueue()
