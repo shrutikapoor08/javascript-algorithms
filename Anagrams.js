@@ -16,21 +16,13 @@ function validAnagram(string1, string2) {
     const counter2 = {};
 
     for( let s of string1 ){
-        if(!counter1[s]) {
-            counter1[s] = 1;
-        }
-        else counter1[s] = counter1[s] +1;
+        counter1[s] ? counter1[s]++ : 1;
     }
 
-
-    for( let s of string2 ) {
-        if(!counter2[s]) {
-            counter2[s] = 1;
-        }
-        else {
-            counter2[s] = counter2[s] +1;
-        }
+    for( let s of string2 ){
+        counter2[s] ? counter2[s]++ : 1;
     }
+
 
     for( let key in counter1) {
         if( !counter2[key] ||
