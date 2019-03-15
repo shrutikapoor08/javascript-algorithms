@@ -13,4 +13,6 @@
 1. [Quick Sort](quicksort.js)
 1. [Recursion1](recursive1.js)
 1. [Recursion2](recursive2.js)
-1. LinkedList
+1. [LinkedList](LinkedList.js)
+1. [Binary Search Trees](BST.js)
+
