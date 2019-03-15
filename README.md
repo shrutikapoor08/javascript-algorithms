@@ -1,6 +1,9 @@
 # DO ALL ZA ALGORITHMS! 
 :sunglasses:
 :sunglasses:
+:sunglasses:
+:sunglasses:
+:sunglasses:
 
 
 ### Table of Contents
@@ -10,3 +13,4 @@
 1. [Quick Sort](quicksort.js)
 1. [Recursion1](recursive1.js)
 1. [Recursion2](recursive2.js)
+1. LinkedList
