@@ -23,5 +23,9 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "prettier": "^1.16.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4"
   }
 }
