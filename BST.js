@@ -76,6 +76,7 @@ console.log(tree.contains(2));
 console.log(tree.contains(21));
 console.log(tree.contains(12));
 
+export default BST;
 //          10
 //       8       12
 //    5    9  11   18
