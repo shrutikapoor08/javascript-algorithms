@@ -1,0 +1,27 @@
+{
+  "name": "javascript-algorithms",
+  "version": "1.0.0",
+  "description": "A resource for implementation of common algorithms and data-structures",
+  "main": "Queue.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shrutikapoor08/javascript-algorithms.git"
+  },
+  "keywords": [
+    "data-structures",
+    "algorithms"
+  ],
+  "author": "Shruti Kapoor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shrutikapoor08/javascript-algorithms/issues"
+  },
+  "homepage": "https://github.com/shrutikapoor08/javascript-algorithms#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "prettier": "^1.16.4"
+  }
+}
