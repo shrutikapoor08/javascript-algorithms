@@ -3,6 +3,8 @@ Store sorted data.
 Left is less than parent node
 Right is greater than parent node
 Every node has at most two nodes - Binary Tree
+Insertion - O(logn)
+Searching - O(logn)
  */
 
 class Node {
