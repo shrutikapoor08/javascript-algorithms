@@ -8,60 +8,56 @@ Searching - O(logn)
  */
 
 class Node {
-    constructor(value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
 
 class BST {
-    constructor(){
-        this.root = null;
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+    const node = new Node(value);
+    if (this.root === null) {
+      this.root = node;
+      return this;
     }
 
-    insert(value) {
-        const node = new Node(value);
-        if(this.root === null) {
-            this.root = node;
-            return this;
-        }
-
-        let current = this.root;
-        while(true) {
-            if(value === current.value) return this;
-            if(value < current.value) {
-                if(current.left === null) {
-                    current.left = node;
-                    return this;
-                }
-                else current = current.left;
-            }
-            else if(value > current.value) {
-                if(current.right === null) {
-                    current.right = node;
-                    return this;
-                }
-                else current = current.right;
-            }
-        }
+    let current = this.root;
+    while (true) {
+      if (value === current.value) return this;
+      if (value < current.value) {
+        if (current.left === null) {
+          current.left = node;
+          return this;
+        } else current = current.left;
+      } else if (value > current.value) {
+        if (current.right === null) {
+          current.right = node;
+          return this;
+        } else current = current.right;
+      }
     }
+  }
 
-    contains(value) {
-        let current = this.root;
-        while(current) {
-            if (value === current.value) return true;
-            else if (value < current.value ) {
-                current = current.left;
-            }
-            else {
-                current = current.right;
-            }
-        }
-        return false;
+  contains(value) {
+    let current = this.root;
+    while (current) {
+      if (value === current.value) return true;
+      else if (value < current.value) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
     }
+    return false;
+  }
 
-    /*
+  /*
     - Create a queue and variable to store if the node is visited
     - start with the root
     - loop as long as there is anything in the queue
@@ -71,21 +67,21 @@ class BST {
     - return the visited nodes variable
  */
 
-    BreadthFirstSearch() {
-         const queue = [];
-         const visited = [];
-         let node = this.root;
+  BreadthFirstSearch() {
+    const queue = [];
+    const visited = [];
+    let node = this.root;
 
-         queue.push(node);
-         while(queue.length) {
-             node = queue.shift();
-             if(node.left) queue.push(node.left);
-             if(node.right) queue.push(node.right);
-             visited.push(node.value);
-         }
-         return visited;
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+      visited.push(node.value);
     }
-/*
+    return visited;
+  }
+  /*
     - Create a variable to store the values of nodes visited
     - Store the root in current
     - Write a helper function which accepts a node
@@ -96,19 +92,19 @@ class BST {
     - return visited
  */
 
-DepthFirstSearchPreOrder() {
-const visited = [];
-const current = this.root;
+  DepthFirstSearchPreOrder() {
+    const visited = [];
+    const current = this.root;
 
-function traverse(node) {
-    visited.push(node.value);
-    if(node.left) traverse(node.left);
-    if(node.right) traverse(node.right);
-}
+    function traverse(node) {
+      visited.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
 
-traverse(current);
-return visited;
-}
+    traverse(current);
+    return visited;
+  }
 }
 
 var tree = new BST();
