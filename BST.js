@@ -58,6 +58,7 @@ class BST {
   }
 
   /*
+    BreadthFirstSearch
     - Create a queue and variable to store if the node is visited
     - start with the root
     - loop as long as there is anything in the queue
@@ -66,7 +67,6 @@ class BST {
       - if node has right children, add to queue
     - return the visited nodes variable
  */
-
   BreadthFirstSearch() {
     const queue = [];
     const visited = [];
@@ -81,7 +81,8 @@ class BST {
     }
     return visited;
   }
-  /*
+
+  /* Depth First Search
     - Create a variable to store the values of nodes visited
     - Store the root in current
     - Write a helper function which accepts a node
@@ -91,7 +92,6 @@ class BST {
     - invoke the helper function with the current variable
     - return visited
  */
-
   DepthFirstSearchPreOrder() {
     const visited = [];
     const current = this.root;
