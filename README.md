@@ -17,3 +17,4 @@
 1. [Binary Search Trees](BST.js)
 1. [Breadth First Search](BST.js)
 1. [Depth First Search](BST.js)
+1. [Heaps](Heaps.js)
