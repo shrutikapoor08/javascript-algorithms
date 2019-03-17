@@ -15,5 +15,5 @@
 1. [Recursion2](recursive2.js)
 1. [LinkedList](LinkedList.js)
 1. [Binary Search Trees](BST.js)
-1. [Breadth First Search](BFS.js)
-1. [Depth First Search](DFS.js)
+1. [Breadth First Search](BST.js)
+1. [Depth First Search](BST.js)

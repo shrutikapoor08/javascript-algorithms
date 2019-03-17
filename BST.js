@@ -62,13 +62,13 @@ class BST {
     }
 
     /*
-- Create a queue and variable to store if the node is visited
-- start with the root
-- loop as long as there is anything in the queue
-  - dequeue a node from queue and push the value of node into visited nodes list
-  - if node has left children, add to queue
-  - if node has right children, add to queue
-- return the visited nodes variable
+    - Create a queue and variable to store if the node is visited
+    - start with the root
+    - loop as long as there is anything in the queue
+      - dequeue a node from queue and push the value of node into visited nodes list
+      - if node has left children, add to queue
+      - if node has right children, add to queue
+    - return the visited nodes variable
  */
 
     BreadthFirstSearch() {
@@ -84,8 +84,31 @@ class BST {
              visited.push(node.value);
          }
          return visited;
-    };
+    }
+/*
+    - Create a variable to store the values of nodes visited
+    - Store the root in current
+    - Write a helper function which accepts a node
+        - push the value of current node to visited
+        - if node has left, call helper with left property(visit all left)
+        - if node has right, call helper with right property
+    - invoke the helper function with the current variable
+    - return visited
+ */
 
+DepthFirstSearchPreOrder() {
+const visited = [];
+const current = this.root;
+
+function traverse(node) {
+    visited.push(node.value);
+    if(node.left) traverse(node.left);
+    if(node.right) traverse(node.right);
+}
+
+traverse(current);
+return visited;
+}
 }
 
 var tree = new BST();
@@ -103,7 +126,7 @@ console.log(tree.contains(21));
 console.log(tree.contains(12));
 
 console.log(tree.BreadthFirstSearch());
-
+console.log(tree.DepthFirstSearchPreOrder());
 //          10
 //       8       12
 //    5    9  11   18
