@@ -107,7 +107,7 @@ class BST {
   }
 }
 
-var tree = new BST();
+const tree = new BST();
 tree.insert(10);
 tree.insert(8);
 tree.insert(5);
@@ -120,7 +120,6 @@ console.log(JSON.stringify(tree));
 console.log(tree.contains(2));
 console.log(tree.contains(21));
 console.log(tree.contains(12));
-
 console.log(tree.BreadthFirstSearch());
 console.log(tree.DepthFirstSearchPreOrder());
 //          10
