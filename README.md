@@ -18,3 +18,4 @@
 1. [Breadth First Search](BST.js)
 1. [Depth First Search](BST.js)
 1. [Heaps](Heaps.js)
+1. [Priority Queue](PriorityQueue.js)
