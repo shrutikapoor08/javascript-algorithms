@@ -69,6 +69,7 @@ class Heaps {
           swap = leftchildIndex;
         }
       }
+
       if(rightchildIndex < length) {
         rightChild = this.values[rightChild];
         if( (element < rightChild && swap === null) ||
