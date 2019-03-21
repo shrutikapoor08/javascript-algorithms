@@ -20,3 +20,4 @@
 1. [Heaps](Heaps.js)
 1. [Priority Queue](PriorityQueue.js)
 1. [HashTable](HashTable.js)
+1. [Graphs](Graphs.js)

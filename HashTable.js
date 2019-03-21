@@ -51,7 +51,7 @@ class HashTable {
             }
         }
         return valuesArray;
-    }
+    } 
 }
 
 let hashTable = new HashTable(17);
