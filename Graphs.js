@@ -74,6 +74,68 @@ class Graph {
         }
         return results;
     }
+
+    depthFirstSearchIterative(start){
+        /*
+           Use a stack
+           push start on to the stack
+           while stack is not empty
+                pop vertex
+                if vertex is not visited
+                visit vertex, add to results
+                for each of vertex's neightbors,
+                    push neighbor on the stack
+         */
+
+        const stack = [];
+        const visited = {};
+        const results = [];
+        stack.push(start);
+
+        while(stack.length > 0) {
+            let vertex = stack.pop();
+            if(!visited[vertex]) {
+                results.push(vertex);
+                visited[vertex] = true;
+                const neighbors = this.adjacencyList[vertex];
+                neighbors.forEach(neighbor => stack.push(neighbor))
+            }
+        }
+
+        return results;
+    }
+
+    breadthFirstSearch(start) {
+        /* Use a queue (shift array)
+            Place the starting vertex in it
+            Create a results to store nodes
+            create a visited to store nodes visited
+            mark the starting vertex as visited
+            loop as long as there is something in the queue
+            remove the first vertex from the queue and store it in results array
+            loop over each vertex in adjacency list for vertex you are visiting.
+            if not visited, enqueue and mark visited
+         */
+        const queue = [];
+        const visited = {};
+        const results = [];
+
+        visited[start] = true;
+        queue.push(start);
+        while(queue.length) {
+            const node = queue.shift();
+            results.push(node);
+            const adjacencies = this.adjacencyList[node];
+            adjacencies.forEach(adjacency => {
+                if(!visited[adjacency]) {
+                    visited[node] = true;
+                    queue.push(adjacency);
+                }
+            });
+        }
+        return results;
+
+    }
 }
 
 const g = new Graph();
@@ -102,4 +164,17 @@ g.addEdge("D", "E");
 g.addEdge("D", "F");
 g.addEdge("E", "F");
 
+/*
+             A
+          /    \
+         B      C
+         |      |
+         D  --- E
+          \   /
+            F
+ */
+
+
 // console.log(g.depthFirstSearchRecursive("A"));
+// console.log(g.depthFirstSearchIterative("A"));
+console.log(g.breadthFirstSearch("A"));
