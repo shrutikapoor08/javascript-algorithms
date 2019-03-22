@@ -128,7 +128,7 @@ class Graph {
             const adjacencies = this.adjacencyList[node];
             adjacencies.forEach(adjacency => {
                 if(!visited[adjacency]) {
-                    visited[node] = true;
+                    visited[adjacency] = true;
                     queue.push(adjacency);
                 }
             });
