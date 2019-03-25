@@ -25,7 +25,8 @@ let numEmptySquares = grid.length * grid[0].length - findObstacles() - 1;
 const startingIndex = findIndexOf(startingSquare);
   console.log(startingIndex);
   traverseGrid(startingIndex[0], startingIndex[1]);
-return path;
+if(path > 0) return path +1 ;
+else return path;
 
 function traverseGrid(row, column) {
   console.log('Grid', grid);
