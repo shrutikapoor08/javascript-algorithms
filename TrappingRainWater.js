@@ -7,40 +7,29 @@ compute how much water it is able to trap after raining.
  * @param {number[]} height
  * @return {number}
  */
+
+
 var trap = function(elevation) {
+  let rightIndex = elevation.length - 1; //check if this needs to be 0 or 1
+  let leftIndex = 0;
+  let leftMax = 0;
+  let rightMax = 0;
+  let area = 0;
 
-  //Find local max
-  let localMax = 0;
-  let leftIndex;
-  let rightIndex = 0;
-
-  while(localMax === 0) {
-    //find first elevation
-    localMax = elevation[rightIndex];
-    rightIndex++;
-  }
-  leftIndex = rightIndex - 1;
-  //found first maxima. index = 1
-
-while(leftIndex < rightIndex) {
-  if(rightIndex === elevation.length - 1) {
-    //restart if no higher elevation found.
-    leftIndex++;
-    rightIndex = leftIndex +1;
-    break;
-  }
-  while(elevation[rightIndex] < elevation[leftIndex]) {
-    rightIndex++;
-  }
-  console.log(elevation[leftIndex], elevation[rightIndex]);
-  console.log(leftIndex, rightIndex);
-  //rightindex = 3. leftindex = 1.
-
+  while(leftIndex < rightIndex) {
+    if(elevation[leftIndex] < elevation[rightIndex]) {
+      elevation[leftIndex] >= leftMax ? leftMax = elevation[leftIndex] : area += (leftMax - elevation[leftIndex]);
+      leftIndex++;
+    } else {
+      elevation[rightIndex] >= rightMax ? (rightMax = elevation[rightIndex]) : area += (rightMax - elevation[rightIndex])
+      rightIndex--
+    }
   }
 
+  return area;
 };
 
 
-const height = [0,1,0,2,1,0,1,3,2,1,2,1];
-console.log(trap(height));
-
+// const height = [0,1,0,2,1,0,1,3,2,1,2,1];
+const height1 = [4,2,3];
+console.log(trap(height1));
